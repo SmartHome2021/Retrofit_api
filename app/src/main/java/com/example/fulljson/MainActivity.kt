@@ -7,6 +7,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fulljson.common.Common
 import com.example.fulljson.models.Film
+import com.example.fulljson.models.FilmsResponse
 import com.example.fulljson.retrofit.RetrofitServieces
 import retrofit2.Call
 import retrofit2.Callback
@@ -30,12 +31,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getAllMovieList() {
-        mService.getMovieList().enqueue(object : Callback<Film> {
-            override fun onFailure(call: Call<Film>, t: Throwable) {
+        mService.getMovieList().enqueue(object : Callback<FilmsResponse> {
+            override fun onFailure(call: Call<FilmsResponse>, t: Throwable) {
                 Log.i("testFAIL1", t.toString())
             }
 
-            override fun onResponse(call: Call<Film>, response: Response<Film>) {
+            override fun onResponse(call: Call<FilmsResponse>, response: Response<FilmsResponse>) {
 
                 Log.i("testACCES", response.toString())
 
