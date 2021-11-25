@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
     private fun getAllMovieList() {
         mService.getMovieList().enqueue(object : Callback<Film> {
             override fun onFailure(call: Call<Film>, t: Throwable) {
-                Log.i("testFAIL", t.toString())
+                Log.i("testFAIL1", t.toString())
             }
 
             override fun onResponse(call: Call<Film>, response: Response<Film>) {
